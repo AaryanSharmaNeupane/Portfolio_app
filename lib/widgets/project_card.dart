@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:portfolio/main.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../model/project_info.dart';
@@ -52,7 +53,10 @@ Widget buildCard(int index, context, String title, List images,
               onTap: () {
                 launchUrl(Uri.parse(githubLink));
               },
-              child: Text(githubLink),
+              child: Text(
+                githubLink,
+                style: const TextStyle(color: secondaryColor),
+              ),
             ),
           ],
         ),

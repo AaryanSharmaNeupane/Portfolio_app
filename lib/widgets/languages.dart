@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/main.dart';
 
 Widget buildLanguages() {
   List<String> frontendLogos = [
@@ -25,8 +26,8 @@ Widget buildLanguages() {
     padding: const EdgeInsets.all(8),
     decoration: BoxDecoration(
       border: Border.all(
-        width: 1,
-        color: Colors.white,
+        width: 2,
+        color: secondaryColor,
       ),
     ),
     child: Column(
@@ -37,55 +38,87 @@ Widget buildLanguages() {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text("Frontend"),
+                  const Text(
+                    "Frontend",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
                       children: [
-                        CircleAvatar(
-                          foregroundImage: NetworkImage(frontendLogos[0]),
-                          backgroundColor: Colors.white,
+                        Padding(
+                          padding: const EdgeInsets.all(2.0),
+                          child: CircleAvatar(
+                            foregroundImage: NetworkImage(frontendLogos[0]),
+                            backgroundColor: Colors.white,
+                          ),
                         ),
-                        CircleAvatar(
-                          foregroundImage: NetworkImage(frontendLogos[1]),
-                          backgroundColor: Colors.orange.shade900,
+                        Padding(
+                          padding: const EdgeInsets.all(2.0),
+                          child: CircleAvatar(
+                            foregroundImage: NetworkImage(frontendLogos[1]),
+                            backgroundColor: Colors.orange.shade900,
+                          ),
                         ),
-                        CircleAvatar(
-                          foregroundImage: NetworkImage(frontendLogos[2]),
+                        Padding(
+                          padding: const EdgeInsets.all(2.0),
+                          child: CircleAvatar(
+                            foregroundImage: NetworkImage(frontendLogos[2]),
+                          ),
                         )
                       ],
                     ),
                   ),
-                  CircleAvatar(
-                    foregroundImage: NetworkImage(frontendLogos[3]),
+                  Padding(
+                    padding: const EdgeInsets.all(2.0),
+                    child: CircleAvatar(
+                      foregroundImage: NetworkImage(frontendLogos[3]),
+                    ),
                   ),
                 ],
               ),
               const VerticalDivider(
-                thickness: 1,
-                color: Colors.white,
+                thickness: 2,
+                color: secondaryColor,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text("Backend"),
+                  const Text(
+                    "Backend",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
                       children: [
-                        CircleAvatar(
-                          foregroundImage: NetworkImage(backendLogos[0]),
-                          backgroundColor: Colors.white,
-                        ),
-                        CircleAvatar(
-                          foregroundImage: NetworkImage(
-                            backendLogos[1],
+                        Padding(
+                          padding: const EdgeInsets.all(2.0),
+                          child: CircleAvatar(
+                            foregroundImage: NetworkImage(backendLogos[0]),
+                            backgroundColor: Colors.white,
                           ),
-                          backgroundColor: Colors.white,
                         ),
-                        CircleAvatar(
-                          foregroundImage: NetworkImage(
-                            backendLogos[2],
+                        Padding(
+                          padding: const EdgeInsets.all(2.0),
+                          child: CircleAvatar(
+                            foregroundImage: NetworkImage(
+                              backendLogos[1],
+                            ),
+                            backgroundColor: Colors.white,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(2.0),
+                          child: CircleAvatar(
+                            foregroundImage: NetworkImage(
+                              backendLogos[2],
+                            ),
+                            backgroundColor: Colors.white,
                           ),
                         ),
                       ],
@@ -93,12 +126,18 @@ Widget buildLanguages() {
                   ),
                   Row(
                     children: [
-                      CircleAvatar(
-                        foregroundImage: NetworkImage(backendLogos[3]),
-                        backgroundColor: Colors.blue.shade500,
+                      Padding(
+                        padding: const EdgeInsets.all(2.0),
+                        child: CircleAvatar(
+                          foregroundImage: NetworkImage(backendLogos[3]),
+                          backgroundColor: Colors.blue.shade500,
+                        ),
                       ),
-                      CircleAvatar(
-                        foregroundImage: NetworkImage(backendLogos[4]),
+                      Padding(
+                        padding: const EdgeInsets.all(2.0),
+                        child: CircleAvatar(
+                          foregroundImage: NetworkImage(backendLogos[4]),
+                        ),
                       ),
                     ],
                   ),
@@ -108,27 +147,47 @@ Widget buildLanguages() {
           ),
         ),
         const Divider(
-          thickness: 1,
-          color: Colors.white,
+          thickness: 2,
+          color: secondaryColor,
         ),
-        const Text("DevOps"),
+        const Align(
+          alignment: Alignment.topLeft,
+          child: Text(
+            "DevOps",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
         Row(
           children: [
-            CircleAvatar(
-              foregroundImage: NetworkImage(devOps[0]),
-              backgroundColor: Colors.black54,
+            Padding(
+              padding: const EdgeInsets.all(2.0),
+              child: CircleAvatar(
+                foregroundImage: NetworkImage(devOps[0]),
+                backgroundColor: Colors.black54,
+              ),
             ),
-            CircleAvatar(
-              foregroundImage: NetworkImage(devOps[1]),
-              backgroundColor: Colors.white,
+            Padding(
+              padding: const EdgeInsets.all(2.0),
+              child: CircleAvatar(
+                foregroundImage: NetworkImage(devOps[1]),
+                backgroundColor: Colors.white,
+              ),
             ),
-            CircleAvatar(
-              foregroundImage: NetworkImage(devOps[2]),
-              backgroundColor: Colors.white,
+            Padding(
+              padding: const EdgeInsets.all(2.0),
+              child: CircleAvatar(
+                foregroundImage: NetworkImage(devOps[2]),
+                backgroundColor: Colors.white,
+              ),
             ),
-            CircleAvatar(
-              foregroundImage: NetworkImage(devOps[3]),
-              backgroundColor: Colors.white,
+            Padding(
+              padding: const EdgeInsets.all(2.0),
+              child: CircleAvatar(
+                foregroundImage: NetworkImage(devOps[3]),
+                backgroundColor: Colors.white,
+              ),
             ),
           ],
         )

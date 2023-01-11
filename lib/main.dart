@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/home_page.dart';
 
+const secondaryColor = Colors.teal;
 void main() {
   runApp(const MyApp());
 }
