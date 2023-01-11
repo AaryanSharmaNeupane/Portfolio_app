@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/widgets/contact.dart';
 import 'package:portfolio/widgets/languages.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
@@ -29,6 +30,34 @@ class AboutScreen extends StatelessWidget {
               height: 8,
             ),
             buildLanguages(),
+            Text("My playlist"),
+            Row(
+              children: [
+                InkWell(
+                  onTap: () {
+                    launchUrlString(
+                        "https://www.youtube.com/watch?v=WOdnRhWeHoY&list=RDWOdnRhWeHoY");
+                  },
+                  child: Text("11111111111"),
+                ),
+                Spacer(),
+                InkWell(
+                  onTap: () {
+                    launchUrlString(
+                        "https://www.youtube.com/watch?v=p9r2GxMlRD4&list=RDp9r2GxMlRD4");
+                  },
+                  child: Text("222222222222"),
+                ),
+                Spacer(),
+                InkWell(
+                  onTap: () {
+                    launchUrlString(
+                        "https://www.youtube.com/watch?v=D-0UofHeFdc&list=RDD-0UofHeFdc");
+                  },
+                  child: Text("333333333"),
+                ),
+              ],
+            ),
             buildContact(),
           ],
         ),
