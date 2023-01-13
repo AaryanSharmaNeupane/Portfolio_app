@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ProjectInfo {
   String title;
@@ -14,7 +15,7 @@ class ProjectInfo {
   });
 }
 
-List<ProjectInfo> projects = [
+final List<ProjectInfo> projects = [
   ProjectInfo(
       title: "Yatraa",
       images: [

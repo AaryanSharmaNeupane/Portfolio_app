@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'screens/home_page.dart';
+import 'package:portfolio/screens/home_page.dart';
+import '../screens/first_screen.dart';
 
 const secondaryColor = Colors.teal;
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
       ),
       debugShowCheckedModeBanner: false,
-      home: const HomePage(),
+      home: const FirstScreen(),
     );
   }
 }

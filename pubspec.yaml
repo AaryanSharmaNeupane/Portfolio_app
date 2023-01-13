@@ -10,6 +10,7 @@ dependencies:
     sdk: flutter
   carousel_slider: ^4.2.1
   url_launcher: ^6.1.7
+  provider: ^6.0.5
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
@@ -23,6 +24,8 @@ flutter:
   assets:
     - assets/images/dv.jpg
     - assets/images/gif.gif
+    - assets/images/apps_crashed.jpg
+    - assets/images/shaq.gif
   fonts:
     - family: OpenSans
       fonts:

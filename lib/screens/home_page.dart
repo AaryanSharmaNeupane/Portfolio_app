@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/screens/about_screen.dart';
-import 'package:portfolio/screens/projects_screen.dart';
+
+import '../screens/about_screen.dart';
+import '../screens/projects_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

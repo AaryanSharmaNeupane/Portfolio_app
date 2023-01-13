@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/widgets/contact.dart';
-import 'package:portfolio/widgets/languages.dart';
-import 'package:url_launcher/url_launcher_string.dart';
+import 'package:portfolio/widgets/build_headings.dart';
+
+import '../widgets/build_playlist.dart';
+import '../widgets/contact.dart';
+import '../widgets/languages.dart';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
@@ -15,7 +17,15 @@ class AboutScreen extends StatelessWidget {
           children: [
             const Align(
               alignment: Alignment.topLeft,
-              child: Text("Hello there, Welcome to Aaryan's World."),
+              child: Center(
+                child: Text(
+                  "Hello there, Welcome to Aaryan's World!",
+                  style: TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
             ),
             const SizedBox(
               height: 8,
@@ -29,35 +39,21 @@ class AboutScreen extends StatelessWidget {
             const SizedBox(
               height: 8,
             ),
-            buildLanguages(),
-            Text("My playlist"),
-            Row(
-              children: [
-                InkWell(
-                  onTap: () {
-                    launchUrlString(
-                        "https://www.youtube.com/watch?v=WOdnRhWeHoY&list=RDWOdnRhWeHoY");
-                  },
-                  child: Text("11111111111"),
-                ),
-                Spacer(),
-                InkWell(
-                  onTap: () {
-                    launchUrlString(
-                        "https://www.youtube.com/watch?v=p9r2GxMlRD4&list=RDp9r2GxMlRD4");
-                  },
-                  child: Text("222222222222"),
-                ),
-                Spacer(),
-                InkWell(
-                  onTap: () {
-                    launchUrlString(
-                        "https://www.youtube.com/watch?v=D-0UofHeFdc&list=RDD-0UofHeFdc");
-                  },
-                  child: Text("333333333"),
-                ),
-              ],
+            buildHeadings("Languages and tools:"),
+            const SizedBox(
+              height: 8,
             ),
+            buildLanguages(),
+            const SizedBox(
+              height: 8,
+            ),
+            const Text(
+                '''I just don't want to bore you guys with my boring portfolio. So, I thought of boring you guys with my playlist.'''),
+            const SizedBox(
+              height: 8,
+            ),
+            buildHeadings("My playlist:"),
+            buildPlayList(),
             buildContact(),
           ],
         ),
