@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/model/project_info.dart';
+import 'package:portfolio/screens/add_project_screen.dart';
 import 'package:portfolio/screens/home_page.dart';
-import '../screens/first_screen.dart';
+import 'package:provider/provider.dart';
 
 const secondaryColor = Colors.teal;
 void main() {
@@ -12,15 +14,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.teal,
-        fontFamily: 'Quicksand',
-        brightness: Brightness.dark,
+    return ChangeNotifierProvider(
+      create: (context) => MutateProject(),
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.teal,
+          fontFamily: 'Quicksand',
+          brightness: Brightness.dark,
+        ),
+        debugShowCheckedModeBanner: false,
+        routes: {
+          "/": (context) => const HomePage(),
+          AddProjectScreen.routeName: (context) => AddProjectScreen(),
+        },
       ),
-      debugShowCheckedModeBanner: false,
-      home: const HomePage(),
     );
   }
 }

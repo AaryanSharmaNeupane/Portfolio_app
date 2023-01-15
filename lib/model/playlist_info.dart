@@ -46,7 +46,6 @@ List socials = [
           "https://i.pinimg.com/736x/24/37/73/2437730f7e3a5705e205e67fa2cd1020.jpg",
       playlistUrl: "https://www.instagram.com/that_guy_on_internet/"),
   PlaylistInfo(
-      imageUrl:
-          "https://www.edigitalagency.com.au/wp-content/uploads/Facebook-logo-blue-circle-large-transparent-png.png",
+      imageUrl: "https://www.facebook.com/images/fb_icon_325x325.png",
       playlistUrl: "https://www.facebook.com/theinfinity09"),
 ];
