@@ -12,6 +12,8 @@ class ProjectsScreen extends StatefulWidget {
 
 class _ProjectsScreenState extends State<ProjectsScreen> {
   final form = GlobalKey<FormState>();
+  ProjectInfo addedInformation =
+      ProjectInfo(title: "", images: [], description: "", githubLink: "");
 
   _showBottomSheet(context) {
     return showModalBottomSheet(
@@ -31,20 +33,18 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                       }
                       return null;
                     },
-                    // onSaved: (newValue) {
-                    //   if (newValue != null) {
-                    //     editedProduct = Product(
-                    //       id: editedProduct.id,
-                    //       title: newValue,
-                    //       description: editedProduct.description,
-                    //       price: editedProduct.price,
-                    //       imageUrl: editedProduct.imageUrl,
-                    //       isFavourite: editedProduct.isFavourite,
-                    //     );
-                    //   } else {
-                    //     return;
-                    //   }
-                    // },
+                    onSaved: (newValue) {
+                      if (newValue != null) {
+                        addedInformation = ProjectInfo(
+                          title: newValue,
+                          images: addedInformation.images,
+                          description: addedInformation.description,
+                          githubLink: addedInformation.githubLink,
+                        );
+                      } else {
+                        return;
+                      }
+                    },
                   ),
                   TextFormField(
                     decoration: const InputDecoration(labelText: "Description"),
@@ -57,20 +57,65 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
                       }
                       return null;
                     },
+                    onSaved: (newValue) {
+                      if (newValue != null) {
+                        addedInformation = ProjectInfo(
+                          title: addedInformation.title,
+                          images: addedInformation.images,
+                          description: newValue,
+                          githubLink: addedInformation.githubLink,
+                        );
+                      } else {
+                        return;
+                      }
+                    },
                   ),
-                  const Text("Enter project image Urls"),
-                  for (int i = 0; i < 3; i++)
-                    TextFormField(
-                      decoration: const InputDecoration(
-                          labelText: "Project Image Urls"),
-                      textInputAction: TextInputAction.done,
-                      // validator: (value) {
-                      //   if (value == null || value.isEmpty) {
-                      //     return 'Please enter image Urls';
-                      //   }
-                      //   return null;
-                      // },
-                    ),
+                  // const Text("Enter project image Urls"),
+                  TextFormField(
+                    decoration:
+                        const InputDecoration(labelText: "Project Image Urls"),
+                    textInputAction: TextInputAction.next,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter image Urls';
+                      }
+                      return null;
+                    },
+                    onSaved: (newValue) {
+                      if (newValue != null) {
+                        addedInformation = ProjectInfo(
+                          title: addedInformation.title,
+                          images: [Image.network(newValue)],
+                          description: addedInformation.description,
+                          githubLink: addedInformation.githubLink,
+                        );
+                      } else {
+                        return;
+                      }
+                    },
+                  ),
+                  TextFormField(
+                    decoration: const InputDecoration(labelText: "Github Url"),
+                    textInputAction: TextInputAction.done,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter github url';
+                      }
+                      return null;
+                    },
+                    onSaved: (newValue) {
+                      if (newValue != null) {
+                        addedInformation = ProjectInfo(
+                          title: addedInformation.title,
+                          images: addedInformation.images,
+                          description: newValue,
+                          githubLink: addedInformation.githubLink,
+                        );
+                      } else {
+                        return;
+                      }
+                    },
+                  ),
                   ElevatedButton(
                       onPressed: _saveForm,
                       child: const Text("Submit Project")),
@@ -83,6 +128,9 @@ class _ProjectsScreenState extends State<ProjectsScreen> {
     final isValid = form.currentState!.validate();
     if (!isValid) return;
     form.currentState!.save();
+    setState(() {
+      projects.add(addedInformation);
+    });
   }
 
   @override
