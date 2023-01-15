@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         routes: {
           "/": (context) => const HomePage(),
-          AddProjectScreen.routeName: (context) => AddProjectScreen(),
+          AddProjectScreen.routeName: (context) => const AddProjectScreen(),
         },
       ),
     );

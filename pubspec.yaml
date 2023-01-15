@@ -24,7 +24,8 @@ flutter:
   assets:
     - assets/images/dv.jpg
     - assets/images/gif.gif
-    - assets/images/apps_crashed.jpg
+    - assets/images/sunrise.jpg
+    - assets/images/esewa.jpg
     - assets/images/shaq.gif
   fonts:
     - family: OpenSans

@@ -8,6 +8,23 @@ import '../widgets/languages.dart';
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
 
+  Widget buildQrCard(qr) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(12),
+        child: SizedBox(
+          height: 100,
+          width: 100,
+          child: Image.asset(
+            qr,
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -55,6 +72,14 @@ class AboutScreen extends StatelessWidget {
             buildHeadings("My playlist:"),
             buildPlayList(),
             buildContact(),
+            buildHeadings("Buy me a coffee:"),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                buildQrCard("assets/images/sunrise.jpg"),
+                buildQrCard("assets/images/esewa.jpg")
+              ],
+            ),
           ],
         ),
       ),
